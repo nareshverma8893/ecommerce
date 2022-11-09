@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resource :carts, only: [:show]
   root "home#index"
   resources :orders
+  # get '/orders/:id', to: 'orders#show', as: 'order'
   #resources :products
 end

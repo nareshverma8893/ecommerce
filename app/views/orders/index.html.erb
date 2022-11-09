@@ -4,16 +4,22 @@
 		<thead>
 			<tr>
 				<th>Order_Ids</th>
-				<th>Tittle</th>
-				<th>Price</th>
+				<th>Title</th>
+				<th>Quantity</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @orders.each do |order| %>
-				<tr>
-					<td><%= order.id %></td>
-					<td><%= order.lineitems %></td>
-				</tr>
+				<% order.lineitems.each do |item| %>
+					<tr>
+						<td><%= order.id %></td>
+					
+						<td><%= item.product.title %></td>
+					
+						<td><%= item.quantity %> </td>
+					</tr>
+					
+					<% end %>
 			<% end %>
 		</tbody>
 	</table>

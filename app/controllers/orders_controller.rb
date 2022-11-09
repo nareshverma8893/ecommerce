@@ -4,6 +4,11 @@ class OrdersController < ApplicationController
         @orders = Order.all
     end
 
+    def destroy
+        @order = Order.find(params[:id])
+        @order.destroy
+        redirect_to root_path
+      end
     # def index
     #     @order = Order.find(params[:order_id])
     #     @order.lineitems
